@@ -50,6 +50,8 @@ val regex : Re.t -> string t
     Groups inside [re] are erased.
 *)
 
+[@@@pure]
+
 val conv : ('a -> 'b) -> ('b -> 'a) -> 'a t -> 'b t
 (** [conv to_ from_ tyre] matches the same text as [tyre], but converts back and forth to a different data type.
 
@@ -184,6 +186,8 @@ val first : 'a t -> 'a t
 val greedy : 'a t -> 'a t
 val non_greedy : 'a t -> 'a t
 val nest : 'a t -> 'a t
+
+[@@@impure]
 
 (** {1:matching Matching} *)
 
